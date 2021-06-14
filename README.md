@@ -1,3 +1,6 @@
+[![Open Source Love](https://img.shields.io/badge/OpenSource-Contribute%20%F0%9F%96%A4-green)](https://github.com/parthpandyappp)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6f787046-d870-41a9-a6d6-47a6d2fc8889/deploy-status)](https://app.netlify.com/sites/plunkorders/deploys)
+[![Codesandbox Status](https://img.shields.io/badge/Codesandbox-Sucess-yellowgreen)](https://codesandbox.io/u/parthpandyappp)
 # plunkOrders 💫
 A one-stop solution to place and review business orders, built upon ReactJs. 
 
