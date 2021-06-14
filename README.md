@@ -23,5 +23,5 @@ As a part of solution my friend suggested me to develop a web-app sort of thing 
   + Database
     + `firebase firestore`
   + Deployment
-    + `netlify`
-    + `codesandbox` 
+    + `netlify` [here](https://plunkorders.netlify.app/)
+    + `codesandbox` [here](https://f504x.csb.app/)
