@@ -28,3 +28,24 @@ As a part of solution my friend suggested me to develop a web-app sort of thing 
   + Deployment
     + `netlify` [here](https://plunkorders.netlify.app/)
     + `codesandbox` [here](https://f504x.csb.app/)
+
+## Early Preview
+- Home 
+<p align="center">
+  <img src="https://i.ibb.co/XD5VTPq/home.png" title="Home"/>
+</p>
+
+- When there are no orders 
+<p align="center">
+  <img src="https://i.ibb.co/sbcy2yR/no-orders.png" title="no-orders"/>
+</p>
+
+- Notification using `react-toastify` 
+<p align="center">
+  <img src="https://i.ibb.co/L19KpX7/notification.png" title="notication-on-submit"/>
+</p>
+
+- Order Summary 
+<p align="center">
+  <img src="https://i.ibb.co/WzYjTvT/orders.png" title="Order Summary"/>
+</p>
