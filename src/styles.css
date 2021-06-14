@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono:wght@300&display=swap");
+
+:root {
+  --bar-color: #c7d2fe;
+  --primary-color: #a5b4fc;
+  --black-text: #374151;
+  --off-white: #f3f4f6;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", "sans-serif";
+  background-color: var(--primary-color);
+  color: var(--black-text);
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-center {
+  max-width: 650px;
+  margin: auto;
+}
+
+.container-bg {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--off-white);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.App {
+  text-align: center;
+}
+
+.list-non-bullets {
+  list-style: none;
+}
+
+.list-item-inline {
+  display: inline;
+  font-size: 1.1rem;
+  /* padding: 0.5rem 1rem; */
+}
+
+.navigation {
+  background-color: var(--bar-color);
+  padding: 0.5rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation .nav-brand {
+  font-weight: bold;
+  /* padding-left: 2rem; */
+  font-size: 1.2rem;
+}
+
+.navigation .nav-pills {
+  text-align: right;
+  /* padding-right: 3rem; */
+}
+
+.navigation li {
+  display: inline;
+  /* float: left; */
+  margin: 15px auto;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 2px solid #1f2937;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bar-color);
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  padding: 0.7rem 1.2rem;
+}
+
+.delete-btn {
+  float: right;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.display-card {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--off-white);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.detail-header {
+  background-image: url("https://i.ibb.co/VpbmdwX/blob-scene-haikei.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.detail-header h2 {
+  text-align: "center";
+}
+
+.hr {
+  background: transparent;
+  border-top: 1px solid black;
+}
+
+.footer {
+  font-family: "Roboto Mono", sans-serif;
+  padding: 1rem;
+  text-align: center;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+table {
+  margin: 1rem;
+}
+tr:nth-child(even) {
+  background-color: var(--bar-color);
+}
+
+.no-orders {
+  height: 900px;
+  width: 200px;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  table {
+    margin: 0rem;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    /* padding: 12px; */
+  }
+  .display-card {
+    padding: 1rem;
+    font-size: 12px;
+  }
+  .detail-header {
+    background-image: url("https://i.ibb.co/Z2TqsY6/blob-scene-haikei-1.png");
+  }
+  .delete-btn {
+    font-size: 1rem;
+  }
+}
