@@ -32,20 +32,20 @@ As a part of solution my friend suggested me to develop a web-app sort of thing 
 ## Early Preview
 - Home 
 <p align="center">
-  <img src="https://i.ibb.co/XD5VTPq/home.png" title="Home"/>
+  <img src="https://i.ibb.co/x8FdYT1/home-plunk.png" title="Home"/>
 </p>
 
 - When there are no orders 
 <p align="center">
-  <img src="https://i.ibb.co/sbcy2yR/no-orders.png" title="no-orders"/>
+  <img src="https://i.ibb.co/5v2mnD8/nothing-page.png" title="no-orders"/>
 </p>
 
 - Notification using `react-toastify` 
 <p align="center">
-  <img src="https://i.ibb.co/L19KpX7/notification.png" title="notication-on-submit"/>
+  <img src="https://i.ibb.co/pbq0TZb/order-noti.png" title="notication-on-submit"/>
 </p>
 
 - Order Summary 
 <p align="center">
-  <img src="https://i.ibb.co/WzYjTvT/orders.png" title="Order Summary"/>
+  <img src="https://i.ibb.co/5r26Lc6/screely-1632226639929.png" title="Order Summary"/>
 </p>
