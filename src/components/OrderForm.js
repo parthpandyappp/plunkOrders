@@ -5,9 +5,32 @@ import firebase from "../firebase";
 
 function OrderForm() {
   const [name, setName] = useState("");
-  const [prod_name, setProdName] = useState("");
-  const [quantity, setQuantity] = useState("");
   const [deadline, setDeadline] = useState("");
+  const [arr, setArr] = useState([{ value: "", quantity: "" }]); //Item Name
+
+  // Below Three functions are to handle multiple submissions
+  function addElement() {
+    const newArray = [...arr];
+    newArray.push({
+      value: "",
+      quantity: ""
+    });
+    setArr(newArray);
+  }
+
+  const handleChange = (e, i) => {
+    const newArray = [...arr];
+    newArray[i].value = e.target.value;
+    setArr(newArray);
+  };
+
+  const handleProdChange = (e, i) => {
+    const prodArray = [...arr];
+    prodArray[i].quantity = e.target.value;
+    setArr(prodArray);
+  };
+
+  // This function is to show toast msg
 
   const showInfo = () => {
     toast("Order has been confirmed & placed!", {
@@ -16,6 +39,8 @@ function OrderForm() {
     });
   };
 
+  // This function is to submit data on firebase
+
   function handleSubmit(e) {
     e.preventDefault();
     firebase
@@ -23,15 +48,13 @@ function OrderForm() {
       .collection("orders")
       .add({
         name,
-        prod_name,
-        quantity,
+        arr,
         deadline,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
         setName("");
-        setProdName("");
-        setQuantity("");
+        setArr([{ value: "", quantity: "" }]);
         setDeadline("");
       });
     showInfo();
@@ -51,26 +74,40 @@ function OrderForm() {
           autocomplete="off"
           required
         />
-        <label for="name">Product name</label>
-        <input
-          type="text"
-          name="prod_name"
-          placeholder="Enter the product name"
-          value={prod_name}
-          onChange={(e) => setProdName(e.currentTarget.value)}
-          autocomplete="off"
-          required
-        />
-        <label for="name">Order quantity</label>
-        <input
-          type="text"
-          name="quantity"
-          placeholder="Enter the quantity of product ordered"
-          value={quantity}
-          onChange={(e) => setQuantity(e.currentTarget.value)}
-          autocomplete="off"
-          required
-        />
+
+        {arr.map((item, key) => {
+          return (
+            <>
+              <label for="name">Product name</label>
+              <input
+                type="text"
+                name="prod_name"
+                placeholder="Enter the product name"
+                id={key}
+                onChange={(e) => handleChange(e, key)}
+                autocomplete="off"
+                required
+              />
+
+              <label for="name">Order quantity</label>
+
+              <input
+                type="text"
+                name="quantity"
+                placeholder="Enter the quantity of product ordered"
+                id={key}
+                onChange={(e) => handleProdChange(e, key)}
+                autocomplete="off"
+                required
+              />
+            </>
+          );
+        })}
+
+        <button className="btn" style={{ width: "7rem" }} onClick={addElement}>
+          Add item{" "}
+        </button>
+
         <label for="name">Dispatch deadline</label>
         <input
           type="date"
@@ -78,10 +115,10 @@ function OrderForm() {
           placeholder="Enter the deadline date"
           value={deadline}
           onChange={(e) => setDeadline(e.currentTarget.value)}
-          autocomplete="off"
+          autoComplete="off"
           required
         />
-        <button class="btn" type="submit">
+        <button className="btn" style={{ display: "block" }} type="submit">
           Submit
         </button>
       </form>

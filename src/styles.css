@@ -88,6 +88,7 @@ input {
   justify-content: center;
   align-items: center;
   margin: auto;
+  width: 20rem;
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
@@ -107,7 +108,7 @@ input {
 }
 
 .display-card {
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   background-color: var(--off-white);
@@ -176,5 +177,9 @@ tr:nth-child(even) {
   }
   .delete-btn {
     font-size: 1rem;
+  }
+
+  ul {
+    padding: 0;
   }
 }

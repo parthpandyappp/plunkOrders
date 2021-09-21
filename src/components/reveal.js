@@ -8,20 +8,6 @@ import { RiDeleteBin7Line } from "react-icons/ri";
 export default function Reveal() {
   const [itemArray, setItemArray] = useState([]);
 
-  // useEffect(() => {
-  //   var orders = firebase.firestore().collection("orders");
-
-  //   orders.get().then((snapshot) => {
-  //     const newTimes = snapshot.docs.map((doc) => ({
-  //       id: doc.id,
-  //       ...doc.data()
-  //     }));
-
-  //     setItemArray(newTimes);
-  //   });
-  //   console.log("Pandya");
-  // }, [deleted]);
-
   useEffect(() => {
     firebase
       .firestore()
@@ -39,7 +25,9 @@ export default function Reveal() {
   function deleteOrder(id) {
     firebase.firestore().collection("orders").doc(id).delete();
   }
-
+  itemArray.map((item) => {
+    item.arr.forEach((item) => console.log("idhar", item.value));
+  });
   return (
     <div>
       <Nav />
@@ -59,22 +47,51 @@ export default function Reveal() {
                     onClick={() => deleteOrder(item.id)}
                   />
                 </li>
+
                 <hr />
                 <li>
                   <b>Order details</b>
                 </li>
+                {/* <li>
+                  <b style={{ float: "left" }}>Dispatch deadline :&ensp;</b>
+                  {item.deadline}
+                </li> */}
+
                 <table>
                   <tr>
                     <th>Product Name</th>
                     <th>Quantity</th>
-                    <th>Dispatch deadline</th>
                   </tr>
-                  <tr>
-                    <td>{item.prod_name}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.deadline}</td>
-                  </tr>
+                  {item.arr.map((cam) => {
+                    return (
+                      <>
+                        <tr>
+                          <td style={{ letterSpacing: "2px", width: "12rem" }}>
+                            {cam.value}
+                          </td>
+                          <td style={{ letterSpacing: "4px", width: "15rem" }}>
+                            {cam.quantity}
+                          </td>
+                        </tr>
+                      </>
+                    );
+                  })}
                 </table>
+
+                {/*  #ff8787   */}
+
+                {/* <hr /> */}
+
+                <button
+                  class="btn"
+                  style={{
+                    backgroundColor: "#fff3bf",
+                    marginTop: "0.5rem",
+                    cursor: "default"
+                  }}
+                >
+                  Dispatch deadline : {item.deadline}
+                </button>
               </ul>
             </div>
           );
